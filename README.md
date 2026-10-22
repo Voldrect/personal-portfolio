@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Andhika Narada Putra — Portfolio
 
-## Getting Started
+Personal portfolio for Andhika Narada Putra, a Full-Stack Developer focused on useful digital products, thoughtful interfaces, and the systems behind them.
 
-First, run the development server:
+## Featured projects
+
+- **OTOSURYA** — Digital automotive showroom with vehicle listings and inventory-management functionality. Case-study route: `/projects/otosurya` (`src/app/projects/[slug]/page.tsx`).
+- **CBS Guard** — Security services website with service content and administrative management. Case-study route: `/projects/cbs-guard` (`src/app/projects/[slug]/page.tsx`).
+
+The project images included in this repository are genuine **local development captures** from the original project sources. They are not presented as production screenshots.
+
+![OTOSURYA local development capture](public/projects/otosurya-home.jpg)
+
+![CBS Guard local development capture](public/projects/cbs-guard-home.jpg)
+
+## Built with
+
+- Next.js App Router and React
+- TypeScript
+- Tailwind CSS v4
+- Biome for linting and formatting
+
+## Run locally
+
+Prerequisite: Node.js compatible with the installed Next.js version.
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The portfolio itself does not require project-specific environment variables. The optional sidebar portrait is served from `public/andhika-profile.jpg`; the AN. monogram appears if the image is unavailable.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Routes
 
-## Learn More
+- `/` — Portfolio overview, selected work, About, Tech Stack, Contact, and footer
+- `/projects/otosurya` — OTOSURYA case study
+- `/projects/cbs-guard` — CBS Guard case study
 
-To learn more about Next.js, take a look at the following resources:
+## Checks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run lint
+npx tsc --noEmit
+npx next build --webpack
+```
