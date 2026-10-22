@@ -214,9 +214,39 @@ export async function generateMetadata({
 
   if (!project) return {};
 
+  const title =
+    project.slug === "otosurya"
+      ? "OTOSURYA — Automotive Digital Showroom Case Study | Andhika Narada Putra"
+      : "CBS Guard — Security Services Website Case Study | Andhika Narada Putra";
+  const canonical = `/projects/${project.slug}`;
+
   return {
-    title: `${project.title} — Project Case Study | Andhika Narada Putra`,
+    title,
     description: project.summary,
+    alternates: {
+      canonical,
+    },
+    openGraph: {
+      type: "article",
+      url: canonical,
+      siteName: "Andhika Narada Putra — Portfolio",
+      title,
+      description: project.summary,
+      images: [
+        {
+          url: "/opengraph-image.png",
+          width: 1200,
+          height: 630,
+          alt: "Andhika Narada Putra — Full-Stack Developer",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: project.summary,
+      images: ["/opengraph-image.png"],
+    },
   };
 }
 
