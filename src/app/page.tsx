@@ -374,7 +374,7 @@ export default function Home() {
           aria-labelledby="contact-title"
         >
           <div className="contact-topline">
-            <p className="eyebrow">Contact / 05</p>
+            <p className="eyebrow">Contact / 06</p>
             <span className="contact-cross" aria-hidden="true">
               +
             </span>
